@@ -73,6 +73,29 @@ We categorize queries into 4 groups based on their effectiveness (eff(q, D_q)) a
 
 ## 🔬 Methodology
 
+### Algorithm
+
+The following pseudocode outlines the Refairmulate process for fair and effective query reformulation:
+
+```plaintext
+Algorithm: Refairmulate - Fair and Effective Query Reformulation
+
+Input: Query set Q, relevant documents D_q for each q in Q
+Output: Reformulated query pairs QP = {(q, q') | q in Q, q' in Q'}
+
+1. Initialize QP as an empty set
+2. For each query q in Q:
+    a. If C(q) ≠ 0, skip q  // Skip biased queries
+    b. Compute bias(q, D_q) and eff(q, D_q), then categorize q
+    c. Generate variants V_q = G(q, D_q)
+    d. For each variant v_q^(i) in V_q:
+        i. Compute bias(v_q^(i), D_v_q^(i)) and eff(v_q^(i), D_v_q^(i))
+        ii. Calculate score S(q, v_q^(i)) = w_e * Δeff + w_b * Δbias
+    e. Select q' = argmax_{v_q^(i) in V_q} S(q, v_q^(i))
+    f. Add (q, q') to QP
+3. Return QP
+```
+
 Our construction pipeline follows a three-stage approach: **Classify → Generate → Select**
 
 ### 1. Query Classification
@@ -110,6 +133,15 @@ where:
 - Specified in each module folder
 
 ## 📈 Benchmarking Results
+
+### The overview of our proposed Refairmulate datasets
+
+| Dataset | MRR@10 Source | MRR@10 Destination | MRR@10 Improv. (%) | ARaB-tf@10 Source | ARaB-tf@10 Destination | ARaB-tf@10 Improv. (%) | ARaB-tc@10 Source | ARaB-tc@10 Destination | ARaB-tc@10 Improv. (%) | ARaB-bool@10 Source | ARaB-bool@10 Destination | ARaB-bool@10 Improv. (%) | LIWC@10 Source | LIWC@10 Destination | LIWC@10 Improv. (%) |
+|---------|---------------|--------------------|--------------------|-------------------|------------------------|------------------------|-------------------|------------------------|------------------------|---------------------|--------------------------|--------------------------|----------------|---------------------|---------------------|
+| **Optimal** | 0.161 | 1.000 | 855.715 | 0.0627 | 0.000 | 100.000 | 0.033 | 0.000 | 100.000 | 0.0348 | 0.000 | 100.000 | 0.132 | 0.000 | 100.000 |
+| **Effective** | 0.081 | 0.425 | 426.866 | 0.139 | 0.029 | 388.453 | 0.071 | 0.015 | 370.731 | 0.070 | 0.0156 | 350.393 | 0.273 | 0.081 | 235.330 |
+| **Fair** | 0.109 | 0.626 | 476.180 | 0.113 | 0.019 | 506.243 | 0.058 | 0.009 | 488.916 | 0.058 | 0.058 | 469.897 | 0.224 | 0.053 | 322.279 |
+
 
 ### Cross-Model Performance
 
