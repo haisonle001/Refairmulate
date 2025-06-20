@@ -15,3 +15,5 @@ src/benchmark/cross-encoder/bm25_model/*.bin filter=lfs diff=lfs merge=lfs -text
 datasets/data/Optimal.json filter=lfs diff=lfs merge=lfs -text
 src/benchmark/cross-encoder/bm25_model/* filter=lfs diff=lfs merge=lfs -text
 src/benchmark/cross-encoder/ filter=lfs diff=lfs merge=lfs -text
+/mnt/data/son/Refairmulate/src/benchmark/cross-encoder/dataset.zip filter=lfs diff=lfs merge=lfs -text
+src/benchmark/cross-encoder/dataset.zip filter=lfs diff=lfs merge=lfs -text
