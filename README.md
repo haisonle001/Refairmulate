@@ -128,10 +128,6 @@ where:
 ### Prerequisites
 - Dependencies listed in `requirements.txt`
 
-## 💻 Installation
-
-- Specified in each module folder
-
 ## 📈 Benchmarking Results
 
 ### The overview of our proposed Refairmulate datasets
