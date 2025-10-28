@@ -16,14 +16,14 @@
 
 ## 📋 Table of Contents
 
-- [Dataset Overview](#dataset-overview)
-- [Dataset Structure](#dataset-structure)
-- [Methodology](#methodology)
-- [Installation](#installation)
-- [Usage Examples](#usage-examples)
-- [Benchmarking Results](#benchmarking-results)
-- [Citation](#citation)
-- [License](#license)
+- [Dataset Overview](#-dataset-overview)
+- [Dataset Structure](#-dataset-structure)
+- [Methodology](#-methodology)
+- [Installation](#-installation)
+- [Usage Examples](#-usage-examples)
+- [Benchmarking Results](#-benchmarking-results)
+- [Citation](#-citation)
+- [License](#-license)
 
 ## 📊 Dataset Overview
 
