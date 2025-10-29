@@ -15,15 +15,14 @@
 - 📈 **Demonstrated improvements**: Up to 76.0% MRR@10 gains and 48.5% bias reduction
 
 ## 📋 Table of Contents
-
-- [Dataset Overview](#-dataset-overview)
-- [Dataset Structure](#-dataset-structure)
-- [Methodology](#-methodology)
-- [Installation](#-installation)
-- [Usage Examples](#-usage-examples)
-- [Benchmarking Results](#-benchmarking-results)
-- [Citation](#-citation)
-- [License](#-license)
+ - **Dataset Overview**
+ - **Dataset Structure**
+ - **Methodology**
+ - **Installation**
+ - **Usage Examples**
+ - **Benchmarking Results**
+ - **Citation**
+ - **License**
 
 ## 📊 Dataset Overview
 
@@ -43,6 +42,7 @@ The Refairmulate dataset addresses a critical gap in fairness-aware query reform
 - **Bias Metrics**: ARaB-tc, ARaB-tf, ARaB-bool, LIWC
 - **Multi-objective Scoring**: S(q, q') = w_e × Δeff(q, q') + w_b × Δbias(q, q')
 
+---
 ## 🏗️ Dataset Structure
 
 The Refairmulate dataset is partitioned into three subsets, each targeting distinct fairness-effectiveness trade-offs:
@@ -70,6 +70,8 @@ We categorize queries into 4 groups based on their effectiveness (eff(q, D_q)) a
 - **Group 2**: High Effectiveness, High Bias - Focus on bias reduction while preserving effectiveness
 - **Group 3**: Low Effectiveness, Low Bias - Focus on effectiveness improvement
 - **Group 4**: Low Effectiveness, High Bias - Comprehensive reformulation for both issues
+
+---
 
 ## 🔬 Methodology
 
@@ -123,10 +125,23 @@ where:
 - w_e, w_b: Configurable weights
 ```
 
+---
+
 ## 💻 Installation
 
 ### Prerequisites
 - Dependencies listed in `requirements.txt`
+
+---
+
+## 📋 Usage Examples
+
+Usage examples for the dataset and codebase are coming soon! In general, you can:
+- Download the dataset from the `datasets/` directory.
+- Use the provided scripts in `src/` to run query classification, generation, and selection pipelines.
+- Evaluate your models using the benchmarking scripts.
+
+---
 
 ## 📈 Benchmarking Results
 
@@ -166,54 +181,7 @@ We evaluate models trained on Refairmulate on two independent human-annotated ne
 - **Negative Rate**: Percentage of queries showing degradation
 - **Neutral Rate**: Percentage of queries with mixed or no significant change
 
-## 🛠️ Repository Structure
-
-```
-refairmulate/
-├── datasets/                       # Dataset files and evaluation data
-│   ├── data/                       # Main dataset files
-│   ├── eval/                       # Evaluation datasets
-│   └── queries/                    # Query collections
-├── resources/                      # Pre-computed resources and models
-│   ├── outputcollection_neutralityscores.tsv
-│   ├── liwccollection_bias.pkl
-│   ├── msmarco_passage_docs_bias_tf.pkl
-│   ├── msmarco_passage_docs_bias_bool.pkl
-│   └── msmarco_passage_docs_bias_tc.pkl
-├── src/
-│   ├── classification/             # Query classification pipeline
-│   │   ├── data/                   # Classification data
-│   │   ├── model/                  # Classification models
-│   │   ├── src/                    # Classification source code
-│   │   ├── scripts/                # Classification scripts
-│   │   ├── data_loader/            # Data loading utilities
-│   │   └── requirements.txt        # Classification dependencies
-│   ├── generation/                 # Query generation pipeline
-│   │   ├── generate.py             # Main generation script
-│   │   └── README.md               # Generation documentation
-│   ├── selection/                  # Multi-objective selection
-│   │   ├── src/                    # Selection source code
-│   │   ├── scripts/                # Selection scripts
-│   │   └── README.md               # Selection documentation
-│   └── benchmark/                  # Benchmarking and evaluation
-│       └── cross-encoder/          # Cross-encoder models
-├── .gitattributes                  # Git attributes
-└── README.md                       # This file
-```
-
-## 🎯 Use Cases
-
-### Research Applications
-- **Ablation studies**: Analyze fairness-performance trade-offs
-- **Bias measurement**: Benchmark existing systems for gender bias
-- **Model comparison**: Evaluate different retrieval architectures
-
-### Practical Applications
-- **Search engine optimization**: Improve both relevance and fairness
-- **Content recommendation**: Reduce algorithmic bias in recommendations
-- **Academic research**: Support reproducible fairness studies
-- **Industry applications**: Deploy fairer IR systems
-
+---
 
 ## 📖 Citation
 
@@ -228,28 +196,10 @@ If you use Refairmulate in your research, please cite our paper:
 }
 ```
 
-## 📧 Contact
-
-TBD
-
-For questions and support, please open an issue on GitHub or contact the authors.
+---
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Built on the MS MARCO passage retrieval corpus
-- Evaluation conducted using Anserini toolkit
-- Special thanks to the fairness-aware IR research community
-
-## 🔗 Related Work
-
-- [MS MARCO Dataset](https://microsoft.github.io/msmarco/)
-- [Anserini Toolkit](https://github.com/castorini/anserini)
-- [Pyserini Toolkit](https://github.com/castorini/pyserini)
-- [SPLADE](https://github.com/naver/splade)
-- [Sentence-BERT](https://github.com/UKPLab/sentence-transformers)
 
 ---
