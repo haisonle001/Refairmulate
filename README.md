@@ -12,7 +12,7 @@
 - 🔍 **Three specialized subsets**: Optimal, Effective, and Fair
 - ⚖️ **Comprehensive bias metrics**: ARaB variants and LIWC
 - 🚀 **Cross-model validation** across SPLADE, SBERT, TCT-ColBERT, and ANCE
-- 📈 **Demonstrated improvements**: Up to 76.0% MRR@10 gains and 94.5% bias reduction
+- 📈 **Demonstrated improvements**: Up to 76.0% MRR@10 gains and 48.5% bias reduction
 
 ## 📋 Table of Contents
 
