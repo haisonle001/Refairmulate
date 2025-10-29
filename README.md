@@ -132,28 +132,39 @@ where:
 
 ### The overview of our proposed Refairmulate datasets
 
-| Dataset | MRR@10 Source | MRR@10 Destination | MRR@10 Improv. (%) | ARaB-tf@10 Source | ARaB-tf@10 Destination | ARaB-tf@10 Improv. (%) | ARaB-tc@10 Source | ARaB-tc@10 Destination | ARaB-tc@10 Improv. (%) | ARaB-bool@10 Source | ARaB-bool@10 Destination | ARaB-bool@10 Improv. (%) | LIWC@10 Source | LIWC@10 Destination | LIWC@10 Improv. (%) |
-|---------|---------------|--------------------|--------------------|-------------------|------------------------|------------------------|-------------------|------------------------|------------------------|---------------------|--------------------------|--------------------------|----------------|---------------------|---------------------|
-| **Optimal** | 0.161 | 1.000 | 855.715 | 0.0627 | 0.000 | 100.000 | 0.033 | 0.000 | 100.000 | 0.0348 | 0.000 | 100.000 | 0.132 | 0.000 | 100.000 |
-| **Effective** | 0.081 | 0.425 | 426.866 | 0.139 | 0.029 | 388.453 | 0.071 | 0.015 | 370.731 | 0.070 | 0.0156 | 350.393 | 0.273 | 0.081 | 235.330 |
-| **Fair** | 0.109 | 0.626 | 476.180 | 0.113 | 0.019 | 506.243 | 0.058 | 0.009 | 488.916 | 0.058 | 0.058 | 469.897 | 0.224 | 0.053 | 322.279 |
+### Dataset Statistics
+| Subset | Query Pairs | MRR@10 Improvement | ARaB-TC Reduction | ARaB-TF Reduction | ARaB-BOOL Reduction | LIWC Reduction | Use Case |
+|--------|-------------|-------------------|------------------|------------------|---------------------|----------------|----------|
+| **Optimal** | 112,261 | +521.1% | -100.0% | -100.0% | -100.0% | -100.0% | Theoretical upper bound |
+| **Effective** | 209,343 | +424.9% | -79.1% | -78.9% | -77.7% | -70.3% | Performance-focused improvements |
+| **Fair** | 321,604 | +474.3% | -83.2% | -84.5% | -78.8% | -76.3% | Comprehensive fairness training |
 
 
-### Cross-Model Performance
+### Cross-Model Performance on Optimal Dataset
 
-| Model | MRR@10 Improvement | ARaB Reduction |
-|-------|-------------------|----------------|
-| SPLADE | +76.0% | -94.5% |
-| SBERT | +68.2% | -89.1% |
-| TCT-ColBERT | +71.5% | -91.8% |
-| ANCE | +65.9% | -87.3% |
+The table below shows the performance improvements achieved across different dense retrieval models on a held-out sample of 10,000 queries from the Optimal dataset:
 
-### Generalization Performance
+| Model | MRR@10 Improvement | Max ARaB Reduction |
+|-------|-------------------|-------------------|
+| **SPLADE** | **+76.0%** | **-48.5%** |
+| SBERT | +44.7% | -40.8% |
+| TCT-ColBERT | +55.4% | -35.6% |
+| ANCE | +66.9% | -22.8% |
 
-| Query Set | Effectiveness | Bias Reduction | Positive Rate |
-|-----------|--------------|----------------|---------------|
-| 215 queries | +154.6% | -441.3% | 79.07% |
-| 1,765 queries | +88.7% | -172.6% | 75.58% |
+
+### Generalization on Human-Annotated Neutral Queries
+
+We evaluate models trained on Refairmulate on two independent human-annotated neutral query sets:
+
+| Query Set | Queries | MRR@10 Improvement | ARaB-TC Reduction | ARaB-TF Reduction | ARaB-BOOL Reduction | LIWC Reduction | Positive Rate | Negative Rate | Neutral Rate |
+|-----------|---------|-------------------|------------------|------------------|---------------------|----------------|---------------|---------------|--------------|
+| **Small Set** | 215 | +154.6% | -81.5% | -78.6% | -75.6% | -72.1% | 32.2% | 6.7% | 61.1% |
+| **Large Set** | 1,765 | +88.7% | -63.3% | -60.0% | -55.6% | -56.3% | 33.3% | 14.6% | 52.1% |
+
+**Interpretation:**
+- **Positive Rate**: Percentage of queries showing improvements in both effectiveness and bias
+- **Negative Rate**: Percentage of queries showing degradation
+- **Neutral Rate**: Percentage of queries with mixed or no significant change
 
 ## 🛠️ Repository Structure
 
@@ -209,9 +220,9 @@ refairmulate/
 If you use Refairmulate in your research, please cite our paper:
 
 ```bibtex
-@article{le2025refairmulate,
+@article{TBD,
   title={Refairmulate: A Benchmark Dataset for Gender-Fair Query Reformulations},
-  author={Hai Son, Le and Seyedsalehi, Shirin and Kermani, Morteza Zihayat and Bagheri, Ebrahim},
+  author={TBD},
   journal={TBD},
   year={2025}
 }
@@ -219,10 +230,7 @@ If you use Refairmulate in your research, please cite our paper:
 
 ## 📧 Contact
 
-- **Hai Son Le** - Toronto Metropolitan University
-- **Shirin Seyedsalehi** - Toronto Metropolitan University  
-- **Morteza Zihayat Kermani** - Toronto Metropolitan University
-- **Ebrahim Bagheri** - University of Toronto
+TBD
 
 For questions and support, please open an issue on GitHub or contact the authors.
 
