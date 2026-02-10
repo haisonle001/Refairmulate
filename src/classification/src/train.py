@@ -78,3 +78,4 @@ if __name__ == "__main__":
     parser.add_argument("--train_file", type=str, required=True, help="Path to training data file")
     args = parser.parse_args()
     train_model(args.train_file)
+

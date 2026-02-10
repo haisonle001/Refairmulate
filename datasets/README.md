@@ -87,3 +87,4 @@ This directory contains the source queries used to build the Refairmulate datase
   - **Format**: `query_id\tquery_text`
 - **`queries.train.neutral.mapping.json`**: A JSON file that maps query IDs to their relevant passage IDs from the MS MARCO corpus. This is used to fetch documents for effectiveness and bias calculations.
   - **Format**: `{"query_id": {"query": query_text, "doc_id": doc_id, "doc_text": doc_text}}`
+

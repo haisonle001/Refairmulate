@@ -60,3 +60,4 @@ if __name__ == "__main__":
 
     tokenizer, model = load_model(args.model_dir, device)
     process_file(args.input_file, args.output_file, model, tokenizer, device, args.batch_size)
+

@@ -34,3 +34,4 @@ if __name__ == "__main__":
     tokenizer, model = load_model(args.model_dir)
     label = predict(args.text, model, tokenizer)
     print(f"Predicted Label: {label}")
+
