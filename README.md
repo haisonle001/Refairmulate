@@ -1,10 +1,9 @@
-# Re<span style="color:red">fair</span>mulate: A Benchmark Dataset for Gender-Fair Query Reformulations
+# Re<span style="color:red">fair</span>mulate: A Large-Scale Dataset for Gender-Fair Query Reformulations
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![arXiv](https://img.shields.io/badge/arXiv-2025.XXXX-b31b1b.svg)]()
 
-**Refairmulate** is the first large-scale benchmark dataset specifically designed for fairness-aware query reformulation in Information Retrieval (IR) systems. The dataset contains over **300,000 query pairs** that enable dual-objective optimization of both retrieval effectiveness and gender bias mitigation.
-
+**Refairmulate** is the first large-scale dataset specifically designed for fairness-aware query reformulation in Information Retrieval (IR) systems. The dataset contains over **300,000 query pairs** that enable dual-objective optimization of both retrieval effectiveness and gender bias mitigation.
 ## 🌟 Key Features
 
 - 🎯 **Multi-objective optimization** for both effectiveness and fairness
@@ -30,11 +29,20 @@ The Refairmulate dataset addresses a critical gap in fairness-aware query reform
 
 ### Dataset Statistics
 
-| Subset | Query Pairs | MRR@10 Improvement | Bias Reduction | Use Case |
-|--------|-------------|-------------------|----------------|----------|
-| **Optimal** | 112,261 | +855.7% | -100.0% | Theoretical upper bound |
-| **Effective** | 209,343 | +426.9% | -388.5% | Performance-focused improvements |
-| **Fair** | 321,604 | +476.2% | -506.2% | Comprehensive fairness training |
+| Subset        | Query Pairs | Objective                                                  |
+| ------------- | ----------- | ---------------------------------------------------------- |
+| **Optimal**   | 112,261     | Perfect dual optimization (RR@10 = 1, bias = 0 under BM25) |
+| **Effective** | 209,343     | Improved effectiveness and reduced bias                    |
+| **Fair**      | 321,604     | Reduced bias with flexible effectiveness constraints       |
+
+Each example contains:
+
+* Original query `q`
+* Reformulated query `q'`
+* Retrieval effectiveness scores
+* Bias scores (ARaB-tc, ARaB-tf, ARaB-bool, LIWC)
+* Query group metadata
+* Label category (0–4 as defined in paper)
 
 ### Key Metrics
 
